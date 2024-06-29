@@ -786,10 +786,10 @@
     // Function to randomly sample 25 unique questions
     function sampleQuestions() {
         const allQuestions = questions.slice();
-        
+    
         sampledQuestions = [];
         const indices = new Set();
-        while (indices.size < 25) {
+        while (indices.size < 40) {
             const index = Math.floor(Math.random() * allQuestions.length);
             if (!indices.has(index)) {
                 indices.add(index);
