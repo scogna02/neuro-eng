@@ -835,6 +835,11 @@
             currentPage++;
             displayQuestions();
         }
+        // Add red reset button in last page
+        if ((currentPage + 1) * questionsPerPage >= sampledQuestions.length) {
+            quizContainer.innerHTML += '<button onclick="resetQuiz()">Reset</button>';
+        }
+        
     }
 
     function checkAnswer(index, userAnswer) {
@@ -848,6 +853,14 @@
             feedbackElement.className = "feedback incorrect";
         }
     }
+
+    // add reset button in last page
+    function resetQuiz() {
+        currentPage = 0;
+        sampleQuestions();
+        displayQuestions();
+    }
+
 
     // Initial setup
     sampleQuestions();
